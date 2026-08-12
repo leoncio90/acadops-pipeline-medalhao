@@ -1,0 +1,4 @@
+timestamp,run_id,pipeline,ingestion_date,status,duration_seconds,linhas_entrada,linhas_saida,linhas_rejeitadas,details
+2026-08-12T19:37:43.865892,733c8246,Moodle,2026-08-12,SUCESSO,0.076081,40,40,0,Pipeline executado com sucesso. Arquivo final: data/gold/acoes_provas.json
+2026-08-12T19:37:44.400259,30e58436,SharePoint,2026-08-12,SUCESSO,0.056673,30,19,0,Pipeline executado com sucesso. Arquivo final: data/gold/publicacao_documentos.csv
+2026-08-12T19:37:44.883289,da4b6a78,Chamados,2026-08-12,SUCESSO,0.055517,60,60,0,Pipeline executado com sucesso. Arquivo final: data/gold/triagem_chamados.csv

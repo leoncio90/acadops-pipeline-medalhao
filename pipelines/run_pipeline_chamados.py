@@ -1,0 +1,64 @@
+import sys
+import os
+import uuid
+import argparse
+import pandas as pd
+from datetime import datetime
+
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(PROJECT_ROOT)
+
+from src.chamados.bronze import ingest_to_bronze
+from src.chamados.silver import process_to_silver
+from src.chamados.gold import process_to_gold
+
+def run_chamados_pipeline(ingestion_date=None):
+    pipeline_name = 'Chamados'
+    run_id = uuid.uuid4().hex[:8]
+    start_time = datetime.now()
+    status = 'SUCESSO'
+    details = ''
+    metricas = {}
+    print(f"--- INICIANDO PIPELINE: {pipeline_name} | run_id: {run_id} ---")
+    SOURCE_PATH = os.path.join(PROJECT_ROOT, 'source_data', 'chamados_suporte.csv')
+    BRONZE_PATH = os.path.join(PROJECT_ROOT, 'data', 'bronze', 'chamados')
+    SILVER_PATH = os.path.join(PROJECT_ROOT, 'data', 'silver')
+    GOLD_PATH = os.path.join(PROJECT_ROOT, 'data', 'gold')
+    REJECTED_PATH = os.path.join(PROJECT_ROOT, 'data', 'rejected', 'chamados')
+    try:
+        bronze_file, m_bronze = ingest_to_bronze(SOURCE_PATH, BRONZE_PATH, ingestion_date)
+        if not bronze_file: raise Exception("Falha na Camada Bronze")
+        silver_file, m_silver = process_to_silver(bronze_file, SILVER_PATH, REJECTED_PATH)
+        if not silver_file: raise Exception("Falha na Camada Silver")
+        gold_file, m_gold = process_to_gold(silver_file, GOLD_PATH)
+        if not gold_file: raise Exception("Falha na Camada Gold")
+        metricas = {**m_bronze, **m_silver, **m_gold}
+        details = f"Pipeline executado com sucesso. Arquivo final: {os.path.relpath(gold_file, PROJECT_ROOT)}"
+        print(f"--- PIPELINE {pipeline_name} FINALIZADO COM SUCESSO ---")
+    except Exception as e:
+        status = 'ERRO'
+        details = f"Pipeline falhou: {e}"
+        print(f"--- PIPELINE {pipeline_name} FINALIZADO COM ERRO ---")
+    finally:
+        end_time = datetime.now()
+        log_entry = {
+            'timestamp': end_time.isoformat(), 'run_id': run_id, 'pipeline': pipeline_name,
+            'ingestion_date': metricas.get('ingestion_date', ''),
+            'status': status, 'duration_seconds': (end_time - start_time).total_seconds(),
+            'linhas_entrada': metricas.get('linhas_entrada', 0),
+            'linhas_saida': metricas.get('linhas_saida', 0),
+            'linhas_rejeitadas': metricas.get('linhas_rejeitadas', 0),
+            'details': details
+        }
+        LOG_PATH = os.path.join(PROJECT_ROOT, 'logs', 'log_execucao.csv')
+        os.makedirs(os.path.dirname(LOG_PATH), exist_ok=True)
+        log_df = pd.DataFrame([log_entry])
+        header = not os.path.exists(LOG_PATH)
+        log_df.to_csv(LOG_PATH, mode='a', index=False, header=header, encoding='utf-8')
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Pipeline de triagem de chamados do suporte técnico.')
+    parser.add_argument('--ingestion-date', dest='ingestion_date', default=None,
+                        help='Data da partição no formato YYYY-MM-DD. Sem o parâmetro usa a data de hoje.')
+    args = parser.parse_args()
+    run_chamados_pipeline(args.ingestion_date)

@@ -1,0 +1,61 @@
+id,titulo,descricao,origem,prioridade,data_abertura
+1000,Atualizar calendário de provas,Necessário atualizar o calendário de provas do curso.,Teams,Média,2025-07-22
+1001,Erro ao acessar Moodle,Usuário relata que não consegue acessar o Moodle desde ontem.,Email,Baixa,2025-07-27
+1002,Upload falha no SharePoint,Ao enviar PDF para SharePoint aparece erro 500.,Email,Média,2025-07-26
+1003,Atualizar calendário de provas,Necessário atualizar o calendário de provas do curso.,Formulário,Baixa,2025-07-22
+1004,Ajustar tempo especial,Aluno com tempo especial não está configurado na prova.,Teams,Média,2025-07-26
+1005,Atualizar calendário de provas,Necessário atualizar o calendário de provas do curso.,Formulário,Alta,2025-07-23
+1006,Problema login intranet,Coordenadora não consegue logar na intranet com SSO.,Telefone,Alta,2025-08-03
+1007,Ajustar tempo especial,Aluno com tempo especial não está configurado na prova.,Teams,Baixa,2025-07-05
+1008,Relatório BI não carrega,Painel de BI demora muito para carregar.,Email,Média,2025-07-07
+1009,Solicitar criação de questionário,Professor solicita criação de questionário para avaliação do módulo.,Telefone,Média,2025-07-03
+1010,Falha e-mail institucional,Alguns usuários não recebem e-mails externos.,Formulário,Baixa,2025-07-27
+1011,Relatório BI não carrega,Painel de BI demora muito para carregar.,Telefone,Baixa,2025-07-29
+1012,Criar turma espelho,Solicito criação de turma espelho para o semestre atual.,Teams,Baixa,2025-07-01
+1013,Solicitar criação de questionário,Professor solicita criação de questionário para avaliação do módulo.,Email,Média,2025-08-06
+1014,Ajustar tempo especial,Aluno com tempo especial não está configurado na prova.,Teams,Média,2025-07-09
+1015,Relatório BI não carrega,Painel de BI demora muito para carregar.,Telefone,Baixa,2025-07-28
+1016,Integração boletos Lyceum,Financeiro relata inconsistência na geração de boletos via Lyceum.,Telefone,Baixa,2025-07-26
+1017,Upload falha no SharePoint,Ao enviar PDF para SharePoint aparece erro 500.,Formulário,Média,2025-08-16
+1018,Criar turma espelho,Solicito criação de turma espelho para o semestre atual.,Telefone,Alta,2025-08-08
+1019,Criar turma espelho,Solicito criação de turma espelho para o semestre atual.,Email,Alta,2025-07-23
+1020,Problema login intranet,Coordenadora não consegue logar na intranet com SSO.,Telefone,Alta,2025-08-07
+1021,Solicitar criação de questionário,Professor solicita criação de questionário para avaliação do módulo.,Email,Média,2025-07-26
+1022,Upload falha no SharePoint,Ao enviar PDF para SharePoint aparece erro 500.,Telefone,Média,2025-07-04
+1023,Upload falha no SharePoint,Ao enviar PDF para SharePoint aparece erro 500.,Email,Baixa,2025-07-01
+1024,Falha e-mail institucional,Alguns usuários não recebem e-mails externos.,Teams,Baixa,2025-08-06
+1025,Erro ao acessar Moodle,Usuário relata que não consegue acessar o Moodle desde ontem.,Email,Baixa,2025-08-02
+1026,Ajustar tempo especial,Aluno com tempo especial não está configurado na prova.,Teams,Média,2025-08-02
+1027,Relatório BI não carrega,Painel de BI demora muito para carregar.,Telefone,Média,2025-08-08
+1028,Relatório BI não carrega,Painel de BI demora muito para carregar.,Telefone,Alta,2025-08-10
+1029,Relatório BI não carrega,Painel de BI demora muito para carregar.,Formulário,Alta,2025-07-27
+1030,Criar turma espelho,Solicito criação de turma espelho para o semestre atual.,Teams,Baixa,2025-08-14
+1031,Atualizar calendário de provas,Necessário atualizar o calendário de provas do curso.,Telefone,Alta,2025-08-07
+1032,Solicitar criação de questionário,Professor solicita criação de questionário para avaliação do módulo.,Telefone,Alta,2025-08-16
+1033,Solicitar criação de questionário,Professor solicita criação de questionário para avaliação do módulo.,Telefone,Baixa,2025-07-14
+1034,Upload falha no SharePoint,Ao enviar PDF para SharePoint aparece erro 500.,Telefone,Baixa,2025-07-19
+1035,Solicitar criação de questionário,Professor solicita criação de questionário para avaliação do módulo.,Formulário,Baixa,2025-07-08
+1036,Atualizar calendário de provas,Necessário atualizar o calendário de provas do curso.,Formulário,Baixa,2025-07-01
+1037,Upload falha no SharePoint,Ao enviar PDF para SharePoint aparece erro 500.,Telefone,Baixa,2025-07-23
+1038,Criar turma espelho,Solicito criação de turma espelho para o semestre atual.,Telefone,Baixa,2025-07-24
+1039,Atualizar calendário de provas,Necessário atualizar o calendário de provas do curso.,Telefone,Baixa,2025-08-09
+1040,Falha e-mail institucional,Alguns usuários não recebem e-mails externos.,Teams,Média,2025-07-08
+1041,Erro ao acessar Moodle,Usuário relata que não consegue acessar o Moodle desde ontem.,Email,Baixa,2025-07-14
+1042,Erro ao acessar Moodle,Usuário relata que não consegue acessar o Moodle desde ontem.,Email,Alta,2025-07-05
+1043,Problema login intranet,Coordenadora não consegue logar na intranet com SSO.,Formulário,Baixa,2025-07-25
+1044,Erro ao acessar Moodle,Usuário relata que não consegue acessar o Moodle desde ontem.,Formulário,Baixa,2025-08-17
+1045,Atualizar calendário de provas,Necessário atualizar o calendário de provas do curso.,Formulário,Baixa,2025-08-14
+1046,Falha e-mail institucional,Alguns usuários não recebem e-mails externos.,Telefone,Média,2025-07-22
+1047,Criar turma espelho,Solicito criação de turma espelho para o semestre atual.,Formulário,Média,2025-07-01
+1048,Solicitar criação de questionário,Professor solicita criação de questionário para avaliação do módulo.,Telefone,Baixa,2025-08-09
+1049,Problema login intranet,Coordenadora não consegue logar na intranet com SSO.,Teams,Média,2025-07-25
+1050,Problema login intranet,Coordenadora não consegue logar na intranet com SSO.,Teams,Baixa,2025-07-08
+1051,Problema login intranet,Coordenadora não consegue logar na intranet com SSO.,Email,Alta,2025-08-02
+1052,Problema login intranet,Coordenadora não consegue logar na intranet com SSO.,Formulário,Alta,2025-07-06
+1053,Ajustar tempo especial,Aluno com tempo especial não está configurado na prova.,Email,Baixa,2025-07-16
+1054,Falha e-mail institucional,Alguns usuários não recebem e-mails externos.,Email,Alta,2025-07-02
+1055,Atualizar calendário de provas,Necessário atualizar o calendário de provas do curso.,Telefone,Média,2025-07-14
+1056,Falha e-mail institucional,Alguns usuários não recebem e-mails externos.,Formulário,Média,2025-07-11
+1057,Criar turma espelho,Solicito criação de turma espelho para o semestre atual.,Email,Baixa,2025-07-28
+1058,Atualizar calendário de provas,Necessário atualizar o calendário de provas do curso.,Formulário,Alta,2025-07-15
+1059,Problema login intranet,Coordenadora não consegue logar na intranet com SSO.,Formulário,Baixa,2025-07-02

@@ -1,0 +1,41 @@
+solicitacao_id,curso,modulo_codigo,tipo_prova,data_prova,alunos_tempo_especial,cabecalho,professor_email
+1,Nutrição,ENF-203,QME,2025-11-23,ID2372:50%;ID8566:25%,Padrão AcadOps 2025,prof43@acadops.edu.br
+2,Fisioterapia,MD-101,QME,2025-11-08,,Cabeçalho com orientações,prof45@acadops.edu.br
+3,Medicina,PSI-220,QME,2025-09-07,ID4516:25%;ID4896:25%,Padrão AcadOps 2025,prof49@acadops.edu.br
+4,Psicologia,ODO-302,QAC,2025-10-27,,Padrão AcadOps 2025,prof5@acadops.edu.br
+5,Biomedicina,ENF-203,QME,2025-11-07,,Padrão AcadOps 2025,prof2@acadops.edu.br
+6,Medicina,MD-101,QME,2025-10-15,,Sem cabeçalho,prof24@acadops.edu.br
+7,Fisioterapia,ENF-203,QAC,2025-11-01,ID1092:25%;ID3404:50%,Padrão AcadOps 2025,prof28@acadops.edu.br
+8,Enfermagem,PSI-220,QAC,2025-09-20,,Padrão AcadOps 2025,prof58@acadops.edu.br
+9,Odontologia,ENF-203,QME,2025-10-02,ID5018:100%,Cabeçalho com orientações,prof4@acadops.edu.br
+10,Psicologia,FIS-110,QME,2025-09-13,,Padrão AcadOps 2025,prof10@acadops.edu.br
+11,Nutrição,PSI-220,QME,2025-09-21,,Sem cabeçalho,prof36@acadops.edu.br
+12,Medicina,NUT-115,QME,2025-11-30,ID4638:50%,Padrão AcadOps 2025,prof4@acadops.edu.br
+13,Odontologia,NUT-115,QME,2025-09-30,,Padrão AcadOps 2025,prof54@acadops.edu.br
+14,Biomedicina,ODO-302,QME,2025-09-08,,Padrão AcadOps 2025,prof6@acadops.edu.br
+15,Nutrição,NUT-115,QAC,2025-09-30,ID8932:100%,Cabeçalho com orientações,prof13@acadops.edu.br
+16,Biomedicina,MD-101,QAC,2025-09-18,,Padrão AcadOps 2025,prof55@acadops.edu.br
+17,Nutrição,ENF-203,QME,2025-10-25,ID3647:50%;ID1233:100%,Padrão AcadOps 2025,prof22@acadops.edu.br
+18,Odontologia,BIO-205,QME,2025-10-27,ID8801:25%;ID4949:25%,Padrão AcadOps 2025,prof59@acadops.edu.br
+19,Enfermagem,BIO-205,QME,2025-10-30,ID1575:25%,Sem cabeçalho,prof36@acadops.edu.br
+20,Odontologia,MD-101,QME,2025-10-04,,Padrão AcadOps 2025,prof28@acadops.edu.br
+21,Biomedicina,ODO-302,QME,2025-10-05,ID9048:100%;ID1265:50%,Sem cabeçalho,prof44@acadops.edu.br
+22,Enfermagem,BIO-205,QAC,2025-09-26,,Padrão AcadOps 2025,prof22@acadops.edu.br
+23,Psicologia,FIS-110,QAC,2025-10-29,ID4578:25%,Padrão AcadOps 2025,prof34@acadops.edu.br
+24,Nutrição,ENF-203,QME,2025-10-22,ID4370:25%,Padrão AcadOps 2025,prof16@acadops.edu.br
+25,Medicina,FIS-110,QME,2025-10-19,,Padrão AcadOps 2025,prof47@acadops.edu.br
+26,Medicina,FIS-110,QME,2025-10-14,,Padrão AcadOps 2025,prof42@acadops.edu.br
+27,Psicologia,FIS-110,QME,2025-10-07,,Padrão AcadOps 2025,prof30@acadops.edu.br
+28,Enfermagem,ODO-302,QAC,2025-10-23,,Cabeçalho com orientações,prof29@acadops.edu.br
+29,Fisioterapia,FIS-110,QAC,2025-10-18,ID1958:50%,Padrão AcadOps 2025,prof14@acadops.edu.br
+30,Medicina,PSI-220,QME,2025-10-03,,Padrão AcadOps 2025,prof5@acadops.edu.br
+31,Biomedicina,ODO-302,QME,2025-11-01,ID4948:25%,Cabeçalho com orientações,prof59@acadops.edu.br
+32,Fisioterapia,MD-101,QAC,2025-09-09,,Padrão AcadOps 2025,prof16@acadops.edu.br
+33,Biomedicina,MD-101,QME,2025-09-13,,Padrão AcadOps 2025,prof21@acadops.edu.br
+34,Psicologia,ENF-203,QME,2025-09-22,ID8574:100%,Padrão AcadOps 2025,prof56@acadops.edu.br
+35,Odontologia,ODO-302,QAC,2025-09-30,,Cabeçalho com orientações,prof47@acadops.edu.br
+36,Nutrição,BIO-205,QAC,2025-11-06,,Cabeçalho com orientações,prof28@acadops.edu.br
+37,Psicologia,MD-101,QAC,2025-09-06,,Padrão AcadOps 2025,prof45@acadops.edu.br
+38,Biomedicina,BIO-205,QME,2025-10-08,ID6385:25%,Padrão AcadOps 2025,prof22@acadops.edu.br
+39,Biomedicina,NUT-115,QME,2025-10-04,,Padrão AcadOps 2025,prof48@acadops.edu.br
+40,Psicologia,NUT-115,QME,2025-10-14,,Sem cabeçalho,prof8@acadops.edu.br

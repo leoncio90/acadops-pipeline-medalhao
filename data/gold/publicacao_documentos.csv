@@ -1,0 +1,20 @@
+﻿id,curso,arquivo,destino_url,status_origem,acao,novo_status
+4,Medicina,Ementa_Medicina_2025.pdf,https://share.acadops.edu.br/medicina/Documentos%20Acad%C3%AAmicos/Ementa_Medicina_2025.pdf,A publicar,publicar,Publicado
+5,Fisioterapia,Guia do Calouro_Fisioterapia_2025.pdf,https://share.acadops.edu.br/fisioterapia/Documentos%20Acad%C3%AAmicos/Guia%20do%20Calouro_Fisioterapia_2025.pdf,A publicar,publicar,Publicado
+6,Psicologia,Plano de Ensino_Psicologia_2025.pdf,https://share.acadops.edu.br/psicologia/Documentos%20Acad%C3%AAmicos/Plano%20de%20Ensino_Psicologia_2025.pdf,A publicar,publicar,Publicado
+9,Medicina,Manual do Estágio_Medicina_2024.pdf,https://share.acadops.edu.br/medicina/Documentos%20Acad%C3%AAmicos/Manual%20do%20Est%C3%A1gio_Medicina_2024.pdf,A publicar,publicar,Publicado
+12,Nutrição,Manual do Estágio_Nutrição_2025.pdf,https://share.acadops.edu.br/nutri%C3%A7%C3%A3o/Documentos%20Acad%C3%AAmicos/Manual%20do%20Est%C3%A1gio_Nutri%C3%A7%C3%A3o_2025.pdf,A publicar,publicar,Publicado
+13,Psicologia,Manual do Estágio_Psicologia_2025.pdf,https://share.acadops.edu.br/psicologia/Documentos%20Acad%C3%AAmicos/Manual%20do%20Est%C3%A1gio_Psicologia_2025.pdf,Revisar,enviar_para_revisao,Em revisão
+14,Psicologia,Manual do Estágio_Psicologia_2025.pdf,https://share.acadops.edu.br/psicologia/Documentos%20Acad%C3%AAmicos/Manual%20do%20Est%C3%A1gio_Psicologia_2025.pdf,A publicar,publicar,Publicado
+15,Odontologia,Ementa_Odontologia_2025.pdf,https://share.acadops.edu.br/odontologia/Documentos%20Acad%C3%AAmicos/Ementa_Odontologia_2025.pdf,Revisar,enviar_para_revisao,Em revisão
+16,Medicina,Plano de Ensino_Medicina_2025.pdf,https://share.acadops.edu.br/medicina/Documentos%20Acad%C3%AAmicos/Plano%20de%20Ensino_Medicina_2025.pdf,Revisar,enviar_para_revisao,Em revisão
+18,Fisioterapia,Manual do Estágio_Fisioterapia_2025.pdf,https://share.acadops.edu.br/fisioterapia/Documentos%20Acad%C3%AAmicos/Manual%20do%20Est%C3%A1gio_Fisioterapia_2025.pdf,A publicar,publicar,Publicado
+19,Fisioterapia,Ementa_Fisioterapia_2025.pdf,https://share.acadops.edu.br/fisioterapia/Documentos%20Acad%C3%AAmicos/Ementa_Fisioterapia_2025.pdf,A publicar,publicar,Publicado
+20,Enfermagem,Calendário Avaliativo_Enfermagem_2025.pdf,https://share.acadops.edu.br/enfermagem/Documentos%20Acad%C3%AAmicos/Calend%C3%A1rio%20Avaliativo_Enfermagem_2025.pdf,Revisar,enviar_para_revisao,Em revisão
+21,Medicina,Plano de Ensino_Medicina_2025.pdf,https://share.acadops.edu.br/medicina/Documentos%20Acad%C3%AAmicos/Plano%20de%20Ensino_Medicina_2025.pdf,Revisar,enviar_para_revisao,Em revisão
+22,Fisioterapia,Ementa_Fisioterapia_2025.pdf,https://share.acadops.edu.br/fisioterapia/Documentos%20Acad%C3%AAmicos/Ementa_Fisioterapia_2025.pdf,A publicar,publicar,Publicado
+23,Enfermagem,Manual do Estágio_Enfermagem_2025.pdf,https://share.acadops.edu.br/enfermagem/Documentos%20Acad%C3%AAmicos/Manual%20do%20Est%C3%A1gio_Enfermagem_2025.pdf,Revisar,enviar_para_revisao,Em revisão
+25,Odontologia,Ementa_Odontologia_2024.pdf,https://share.acadops.edu.br/odontologia/Documentos%20Acad%C3%AAmicos/Ementa_Odontologia_2024.pdf,Revisar,enviar_para_revisao,Em revisão
+26,Psicologia,Guia do Calouro_Psicologia_2024.pdf,https://share.acadops.edu.br/psicologia/Documentos%20Acad%C3%AAmicos/Guia%20do%20Calouro_Psicologia_2024.pdf,A publicar,publicar,Publicado
+29,Enfermagem,Ementa_Enfermagem_2024.pdf,https://share.acadops.edu.br/enfermagem/Documentos%20Acad%C3%AAmicos/Ementa_Enfermagem_2024.pdf,A publicar,publicar,Publicado
+30,Nutrição,Guia do Calouro_Nutrição_2025.pdf,https://share.acadops.edu.br/nutri%C3%A7%C3%A3o/Documentos%20Acad%C3%AAmicos/Guia%20do%20Calouro_Nutri%C3%A7%C3%A3o_2025.pdf,Revisar,enviar_para_revisao,Em revisão

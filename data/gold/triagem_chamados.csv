@@ -1,0 +1,61 @@
+﻿id,titulo,descricao,origem,prioridade,data_abertura,equipe_responsavel,regra_acionada,possivel_duplicata,id_referencia
+1000,Atualizar calendário de provas,Necessário atualizar o calendário de provas do curso.,Teams,Média,2025-07-22,Equipe AVA,prova,N,1000
+1001,Erro ao acessar Moodle,Usuário relata que não consegue acessar o Moodle desde ontem.,Email,Baixa,2025-07-27,Equipe AVA,moodle,N,1001
+1002,Upload falha no SharePoint,Ao enviar PDF para SharePoint aparece erro 500.,Email,Média,2025-07-26,Equipe Sistemas Internos,sharepoint,N,1002
+1003,Atualizar calendário de provas,Necessário atualizar o calendário de provas do curso.,Formulário,Baixa,2025-07-22,Equipe AVA,prova,S,1000
+1004,Ajustar tempo especial,Aluno com tempo especial não está configurado na prova.,Teams,Média,2025-07-26,Equipe AVA,prova,N,1004
+1005,Atualizar calendário de provas,Necessário atualizar o calendário de provas do curso.,Formulário,Alta,2025-07-23,Equipe AVA,prova,N,1005
+1006,Problema login intranet,Coordenadora não consegue logar na intranet com SSO.,Telefone,Alta,2025-08-03,Equipe Sistemas Internos,intranet,N,1006
+1007,Ajustar tempo especial,Aluno com tempo especial não está configurado na prova.,Teams,Baixa,2025-07-05,Equipe AVA,prova,N,1007
+1008,Relatório BI não carrega,Painel de BI demora muito para carregar.,Email,Média,2025-07-07,Equipe Business Intelligence,bi,N,1008
+1009,Solicitar criação de questionário,Professor solicita criação de questionário para avaliação do módulo.,Telefone,Média,2025-07-03,Equipe AVA,questionario,N,1009
+1010,Falha e-mail institucional,Alguns usuários não recebem e-mails externos.,Formulário,Baixa,2025-07-27,Equipe Infraestrutura,email,N,1010
+1011,Relatório BI não carrega,Painel de BI demora muito para carregar.,Telefone,Baixa,2025-07-29,Equipe Business Intelligence,bi,N,1011
+1012,Criar turma espelho,Solicito criação de turma espelho para o semestre atual.,Teams,Baixa,2025-07-01,Equipe AVA,turma espelho,N,1012
+1013,Solicitar criação de questionário,Professor solicita criação de questionário para avaliação do módulo.,Email,Média,2025-08-06,Equipe AVA,questionario,N,1013
+1014,Ajustar tempo especial,Aluno com tempo especial não está configurado na prova.,Teams,Média,2025-07-09,Equipe AVA,prova,N,1014
+1015,Relatório BI não carrega,Painel de BI demora muito para carregar.,Telefone,Baixa,2025-07-28,Equipe Business Intelligence,bi,N,1015
+1016,Integração boletos Lyceum,Financeiro relata inconsistência na geração de boletos via Lyceum.,Telefone,Baixa,2025-07-26,Equipe Sistemas Acadêmicos,lyceum,N,1016
+1017,Upload falha no SharePoint,Ao enviar PDF para SharePoint aparece erro 500.,Formulário,Média,2025-08-16,Equipe Sistemas Internos,sharepoint,N,1017
+1018,Criar turma espelho,Solicito criação de turma espelho para o semestre atual.,Telefone,Alta,2025-08-08,Equipe AVA,turma espelho,N,1018
+1019,Criar turma espelho,Solicito criação de turma espelho para o semestre atual.,Email,Alta,2025-07-23,Equipe AVA,turma espelho,N,1019
+1020,Problema login intranet,Coordenadora não consegue logar na intranet com SSO.,Telefone,Alta,2025-08-07,Equipe Sistemas Internos,intranet,N,1020
+1021,Solicitar criação de questionário,Professor solicita criação de questionário para avaliação do módulo.,Email,Média,2025-07-26,Equipe AVA,questionario,N,1021
+1022,Upload falha no SharePoint,Ao enviar PDF para SharePoint aparece erro 500.,Telefone,Média,2025-07-04,Equipe Sistemas Internos,sharepoint,N,1022
+1023,Upload falha no SharePoint,Ao enviar PDF para SharePoint aparece erro 500.,Email,Baixa,2025-07-01,Equipe Sistemas Internos,sharepoint,N,1023
+1024,Falha e-mail institucional,Alguns usuários não recebem e-mails externos.,Teams,Baixa,2025-08-06,Equipe Infraestrutura,email,N,1024
+1025,Erro ao acessar Moodle,Usuário relata que não consegue acessar o Moodle desde ontem.,Email,Baixa,2025-08-02,Equipe AVA,moodle,N,1025
+1026,Ajustar tempo especial,Aluno com tempo especial não está configurado na prova.,Teams,Média,2025-08-02,Equipe AVA,prova,N,1026
+1027,Relatório BI não carrega,Painel de BI demora muito para carregar.,Telefone,Média,2025-08-08,Equipe Business Intelligence,bi,N,1027
+1028,Relatório BI não carrega,Painel de BI demora muito para carregar.,Telefone,Alta,2025-08-10,Equipe Business Intelligence,bi,N,1028
+1029,Relatório BI não carrega,Painel de BI demora muito para carregar.,Formulário,Alta,2025-07-27,Equipe Business Intelligence,bi,N,1029
+1030,Criar turma espelho,Solicito criação de turma espelho para o semestre atual.,Teams,Baixa,2025-08-14,Equipe AVA,turma espelho,N,1030
+1031,Atualizar calendário de provas,Necessário atualizar o calendário de provas do curso.,Telefone,Alta,2025-08-07,Equipe AVA,prova,N,1031
+1032,Solicitar criação de questionário,Professor solicita criação de questionário para avaliação do módulo.,Telefone,Alta,2025-08-16,Equipe AVA,questionario,N,1032
+1033,Solicitar criação de questionário,Professor solicita criação de questionário para avaliação do módulo.,Telefone,Baixa,2025-07-14,Equipe AVA,questionario,N,1033
+1034,Upload falha no SharePoint,Ao enviar PDF para SharePoint aparece erro 500.,Telefone,Baixa,2025-07-19,Equipe Sistemas Internos,sharepoint,N,1034
+1035,Solicitar criação de questionário,Professor solicita criação de questionário para avaliação do módulo.,Formulário,Baixa,2025-07-08,Equipe AVA,questionario,N,1035
+1036,Atualizar calendário de provas,Necessário atualizar o calendário de provas do curso.,Formulário,Baixa,2025-07-01,Equipe AVA,prova,N,1036
+1037,Upload falha no SharePoint,Ao enviar PDF para SharePoint aparece erro 500.,Telefone,Baixa,2025-07-23,Equipe Sistemas Internos,sharepoint,N,1037
+1038,Criar turma espelho,Solicito criação de turma espelho para o semestre atual.,Telefone,Baixa,2025-07-24,Equipe AVA,turma espelho,N,1038
+1039,Atualizar calendário de provas,Necessário atualizar o calendário de provas do curso.,Telefone,Baixa,2025-08-09,Equipe AVA,prova,N,1039
+1040,Falha e-mail institucional,Alguns usuários não recebem e-mails externos.,Teams,Média,2025-07-08,Equipe Infraestrutura,email,N,1040
+1041,Erro ao acessar Moodle,Usuário relata que não consegue acessar o Moodle desde ontem.,Email,Baixa,2025-07-14,Equipe AVA,moodle,N,1041
+1042,Erro ao acessar Moodle,Usuário relata que não consegue acessar o Moodle desde ontem.,Email,Alta,2025-07-05,Equipe AVA,moodle,N,1042
+1043,Problema login intranet,Coordenadora não consegue logar na intranet com SSO.,Formulário,Baixa,2025-07-25,Equipe Sistemas Internos,intranet,N,1043
+1044,Erro ao acessar Moodle,Usuário relata que não consegue acessar o Moodle desde ontem.,Formulário,Baixa,2025-08-17,Equipe AVA,moodle,N,1044
+1045,Atualizar calendário de provas,Necessário atualizar o calendário de provas do curso.,Formulário,Baixa,2025-08-14,Equipe AVA,prova,N,1045
+1046,Falha e-mail institucional,Alguns usuários não recebem e-mails externos.,Telefone,Média,2025-07-22,Equipe Infraestrutura,email,N,1046
+1047,Criar turma espelho,Solicito criação de turma espelho para o semestre atual.,Formulário,Média,2025-07-01,Equipe AVA,turma espelho,S,1012
+1048,Solicitar criação de questionário,Professor solicita criação de questionário para avaliação do módulo.,Telefone,Baixa,2025-08-09,Equipe AVA,questionario,N,1048
+1049,Problema login intranet,Coordenadora não consegue logar na intranet com SSO.,Teams,Média,2025-07-25,Equipe Sistemas Internos,intranet,S,1043
+1050,Problema login intranet,Coordenadora não consegue logar na intranet com SSO.,Teams,Baixa,2025-07-08,Equipe Sistemas Internos,intranet,N,1050
+1051,Problema login intranet,Coordenadora não consegue logar na intranet com SSO.,Email,Alta,2025-08-02,Equipe Sistemas Internos,intranet,N,1051
+1052,Problema login intranet,Coordenadora não consegue logar na intranet com SSO.,Formulário,Alta,2025-07-06,Equipe Sistemas Internos,intranet,N,1052
+1053,Ajustar tempo especial,Aluno com tempo especial não está configurado na prova.,Email,Baixa,2025-07-16,Equipe AVA,prova,N,1053
+1054,Falha e-mail institucional,Alguns usuários não recebem e-mails externos.,Email,Alta,2025-07-02,Equipe Infraestrutura,email,N,1054
+1055,Atualizar calendário de provas,Necessário atualizar o calendário de provas do curso.,Telefone,Média,2025-07-14,Equipe AVA,prova,N,1055
+1056,Falha e-mail institucional,Alguns usuários não recebem e-mails externos.,Formulário,Média,2025-07-11,Equipe Infraestrutura,email,N,1056
+1057,Criar turma espelho,Solicito criação de turma espelho para o semestre atual.,Email,Baixa,2025-07-28,Equipe AVA,turma espelho,N,1057
+1058,Atualizar calendário de provas,Necessário atualizar o calendário de provas do curso.,Formulário,Alta,2025-07-15,Equipe AVA,prova,N,1058
+1059,Problema login intranet,Coordenadora não consegue logar na intranet com SSO.,Formulário,Baixa,2025-07-02,Equipe Sistemas Internos,intranet,N,1059
