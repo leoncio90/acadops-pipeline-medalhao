@@ -1,18 +1,11 @@
-import pandas as pd
 import json
 import os
 import re
+import pandas as pd
 
-'''Esta etapa irá gerar o arquivo JSON final (acoes_provas.json) para consumo. Visto que o entregável
-SharePoint exigiu ajuste de codificação utf-8, como boa prática também ajustei em todos os pipelines.'''
-
-'''O campo alunos_tempo_especial vem como texto livre (ID2372:50%;ID8566:25%). Antes um valor
-malformado derrubava o pipeline inteiro no int() e um trecho sem ":" era descartado calado.
-Agora cada aluno é validado isoladamente: o que estiver fora do padrão vai para o relatório de
-inconsistências e as demais provas continuam sendo geradas.'''
 
 def parse_tempo_especial(valor, id_solicitacao):
-
+    """Extrai configuracoes de alunos com tempo especial e valida formato e faixa percentual."""
     alunos = []
     inconsistencias = []
 
@@ -50,22 +43,27 @@ def parse_tempo_especial(valor, id_solicitacao):
     return alunos, inconsistencias
 
 
-def process_to_gold(silver_file_path, gold_path, rejected_path):
-
+def process_to_gold(silver_file_path: str, gold_path: str, rejected_path: str):
+    """Gera o arquivo JSON final (acoes_provas.json) e isola tempo especial inconsistente."""
     print("Iniciando Camada Gold (Moodle)...")
     try:
         df = pd.read_parquet(silver_file_path)
         acoes_provas = []
         inconsistencias = []
 
-        for _, row in df.iterrows():
-            alunos_especiais, erros = parse_tempo_especial(row['alunos_tempo_especial'], row['solicitacao_id'])
+        # Itera via dicionarios em vez do custoso df.iterrows()
+        for row in df.to_dict('records'):
+            alunos_especiais, erros = parse_tempo_especial(row.get('alunos_tempo_especial'), row['solicitacao_id'])
             inconsistencias.extend(erros)
 
+            data_str = row['data_prova'].strftime('%Y-%m-%d') if hasattr(row['data_prova'], 'strftime') else str(row['data_prova'])[:10]
+
             acao = {
-                "id_solicitacao": int(row['solicitacao_id']), "curso": row['curso'],
-                "modulo": row['modulo_codigo'], "tipo_prova": row['tipo_prova'],
-                "data_prova": row['data_prova'].strftime('%Y-%m-%d'),
+                "id_solicitacao": int(row['solicitacao_id']),
+                "curso": row['curso'],
+                "modulo": row['modulo_codigo'],
+                "tipo_prova": row['tipo_prova'],
+                "data_prova": data_str,
                 "configuracao": {
                     "cabecalho": row['cabecalho_padronizado'],
                     "tempo_especial_alunos": alunos_especiais
@@ -88,10 +86,13 @@ def process_to_gold(silver_file_path, gold_path, rejected_path):
             )
             print(f"-> ATENCAO: {len(inconsistencias)} configuracao(oes) de tempo especial ignorada(s).")
 
-        metricas = {'linhas_saida': len(acoes_provas), 'inconsistencias': len(inconsistencias)}
+        metricas = {
+            'linhas_saida': len(acoes_provas),
+            'inconsistencias': len(inconsistencias)
+        }
 
         print(f"-> Sucesso! {len(acoes_provas)} acao(oes) geradas em: {output_path}")
         return output_path, metricas
     except Exception as e:
         print(f"-> ERRO na camada Gold (Moodle): {e}")
-        return None, {}
+        raise
