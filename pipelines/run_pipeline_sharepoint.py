@@ -1,16 +1,19 @@
-import sys
-import os
-import uuid
 import argparse
-import pandas as pd
 from datetime import datetime
+import os
+import sys
+import traceback
+import uuid
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-sys.path.append(PROJECT_ROOT)
+if PROJECT_ROOT not in sys.path:
+    sys.path.append(PROJECT_ROOT)
 
 from src.sharepoint.bronze import ingest_to_bronze
 from src.sharepoint.silver import process_to_silver
 from src.sharepoint.gold import process_to_gold
+from src.common.observability import log_pipeline_execution
+
 
 def run_sharepoint_pipeline(ingestion_date=None):
     pipeline_name = 'SharePoint'
@@ -20,46 +23,55 @@ def run_sharepoint_pipeline(ingestion_date=None):
     details = ''
     metricas = {}
     print(f"--- INICIANDO PIPELINE: {pipeline_name} | run_id: {run_id} ---")
+
     PENDENCIAS_PATH = os.path.join(PROJECT_ROOT, 'source_data', 'pendencias_sharepoint.csv')
     MAPA_PATH = os.path.join(PROJECT_ROOT, 'source_data', 'mapa_sites_sharepoint.csv')
     BRONZE_PATH = os.path.join(PROJECT_ROOT, 'data', 'bronze', 'sharepoint')
     SILVER_PATH = os.path.join(PROJECT_ROOT, 'data', 'silver')
     GOLD_PATH = os.path.join(PROJECT_ROOT, 'data', 'gold')
     REJECTED_PATH = os.path.join(PROJECT_ROOT, 'data', 'rejected', 'sharepoint')
+
     try:
         bronze_pend_file, bronze_mapa_file, m_bronze = ingest_to_bronze(PENDENCIAS_PATH, MAPA_PATH, BRONZE_PATH, ingestion_date)
-        if not bronze_pend_file: raise Exception("Falha na Camada Bronze")
-        silver_file, m_silver = process_to_silver(bronze_pend_file, bronze_mapa_file, SILVER_PATH, REJECTED_PATH)
-        if not silver_file: raise Exception("Falha na Camada Silver")
+        actual_ingestion_date = m_bronze.get('ingestion_date', ingestion_date or datetime.now().strftime('%Y-%m-%d'))
+        rejected_dir = os.path.join(REJECTED_PATH, f"ingestion_date={actual_ingestion_date}")
+
+        silver_file, m_silver = process_to_silver(bronze_pend_file, bronze_mapa_file, SILVER_PATH, rejected_dir)
         gold_file, m_gold = process_to_gold(silver_file, GOLD_PATH)
-        if not gold_file: raise Exception("Falha na Camada Gold")
+
         metricas = {**m_bronze, **m_silver, **m_gold}
-        details = f"Pipeline executado com sucesso. Arquivo final: {os.path.relpath(gold_file, PROJECT_ROOT)}"
+        ja_publicados = m_gold.get('ja_publicados', 0)
+        details = (f"Pipeline executado com sucesso. Arquivo final: {os.path.relpath(gold_file, PROJECT_ROOT)}"
+                   f" (conciliacao: {ja_publicados} registros ja publicados nao exigem nova acao)")
         print(f"--- PIPELINE {pipeline_name} FINALIZADO COM SUCESSO ---")
     except Exception as e:
         status = 'ERRO'
-        details = f"Pipeline falhou: {e}"
-        print(f"--- PIPELINE {pipeline_name} FINALIZADO COM ERRO ---")
+        details = f"Pipeline falhou: {str(e)} | {traceback.format_exc().splitlines()[-1]}"
+        print(f"--- PIPELINE {pipeline_name} FINALIZADO COM ERRO: {e} ---")
     finally:
         end_time = datetime.now()
         log_entry = {
-            'timestamp': end_time.isoformat(), 'run_id': run_id, 'pipeline': pipeline_name,
-            'ingestion_date': metricas.get('ingestion_date', ''),
-            'status': status, 'duration_seconds': (end_time - start_time).total_seconds(),
+            'timestamp': end_time.isoformat(),
+            'run_id': run_id,
+            'pipeline': pipeline_name,
+            'ingestion_date': metricas.get('ingestion_date', ingestion_date or ''),
+            'status': status,
+            'duration_seconds': (end_time - start_time).total_seconds(),
             'linhas_entrada': metricas.get('linhas_entrada', 0),
             'linhas_saida': metricas.get('linhas_saida', 0),
             'linhas_rejeitadas': metricas.get('linhas_rejeitadas', 0),
             'details': details
         }
         LOG_PATH = os.path.join(PROJECT_ROOT, 'logs', 'log_execucao.csv')
-        os.makedirs(os.path.dirname(LOG_PATH), exist_ok=True)
-        log_df = pd.DataFrame([log_entry])
-        header = not os.path.exists(LOG_PATH)
-        log_df.to_csv(LOG_PATH, mode='a', index=False, header=header, encoding='utf-8')
+        log_pipeline_execution(LOG_PATH, log_entry)
+
+    return status == 'SUCESSO'
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Pipeline de publicação de documentos no SharePoint.')
     parser.add_argument('--ingestion-date', dest='ingestion_date', default=None,
                         help='Data da partição no formato YYYY-MM-DD. Sem o parâmetro usa a data de hoje.')
     args = parser.parse_args()
-    run_sharepoint_pipeline(args.ingestion_date)
+    success = run_sharepoint_pipeline(args.ingestion_date)
+    sys.exit(0 if success else 1)
