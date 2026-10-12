@@ -74,14 +74,23 @@ Se `linhas_entrada` e `linhas_saida` divergem, `linhas_rejeitadas` explica a dif
 ```bash
 pip install -r requirements.txt
 
+# Executar todos os fluxos de uma vez (lote consolidado)
+python pipelines/run_all.py
+
+# Ou executar pipelines individualmente
 python pipelines/run_pipeline_moodle.py
 python pipelines/run_pipeline_sharepoint.py
 python pipelines/run_pipeline_chamados.py
+
+# Executar a suíte de testes automatizados
+pytest -v
 ```
 
 Reprocessar uma partição específica:
 
 ```bash
+python pipelines/run_all.py --ingestion-date 2025-08-20
+# ou individualmente:
 python pipelines/run_pipeline_chamados.py --ingestion-date 2025-08-20
 ```
 
@@ -93,19 +102,28 @@ Os pipelines resolvem os caminhos a partir da raiz do projeto, então funcionam 
 
 ```
 acadops/
+├── .github/
+│   └── workflows/
+│       └── ci.yml         # esteira de CI (Python 3.10/3.11/3.12 + Pytest + smoke test)
 ├── data/
 │   ├── bronze/            # dado bruto particionado por ingestion_date
 │   ├── silver/            # dado limpo em Parquet
 │   ├── gold/              # ENTREGÁVEIS
-│   └── rejected/          # quarentena com motivo da rejeição
+│   └── rejected/          # quarentena particionada com motivo da rejeição
 ├── logs/
 │   └── log_execucao.csv
-├── pipelines/             # orquestradores, um por fluxo
+├── pipelines/             # orquestradores (individuais e lote unificado)
+│   ├── run_all.py
+│   ├── run_pipeline_chamados.py
+│   ├── run_pipeline_moodle.py
+│   └── run_pipeline_sharepoint.py
 ├── source_data/           # CSVs de entrada
 ├── src/
 │   ├── chamados/          # bronze.py / silver.py / gold.py
 │   ├── moodle/
-│   └── sharepoint/
+│   ├── sharepoint/
+│   └── common/            # utilitários transversais (encoding, text, observability)
+├── tests/                 # suíte de testes unitários e de integração (pytest)
 ├── requirements.txt
 └── README.md
 ```
@@ -130,7 +148,6 @@ Resultado: **0 chamados sem equipe definida** contra 13 antes do ajuste.
 
 ## Limitações conhecidas e próximos passos
 
-- Os três orquestradores compartilham a mesma estrutura de log. A independência entre pipelines foi priorizada sobre a extração de um módulo comum; num cenário de mais fluxos, isso viraria um `src/common/`.
-- A triagem é por vocabulário controlado, não por modelo. É auditável e previsível, mas exige manutenção do dicionário — visível na coluna `regra_acionada`, que registra qual termo acionou cada classificação.
-- Sem testes automatizados. A resiliência foi validada manualmente injetando data inválida, percentual não numérico, e-mail malformado e ID duplicado: os três primeiros foram para quarentena, o quarto foi deduplicado e o pipeline concluiu com sucesso.
-- Orquestração via linha de comando. O próximo passo natural é agendamento (Airflow, Prefect ou n8n) usando o `run_id` como chave de correlação.
+- **A triagem é por vocabulário controlado, não por modelo.** É auditável e determinística, mas exige manutenção do dicionário — visível na coluna `regra_acionada`, que registra qual termo acionou cada classificação.
+- **Orquestração e Agendamento.** A execução atual é via linha de comando local. O próximo passo natural é agendamento periódio (Airflow, Prefect ou cron de nuvem) usando o `run_id` como chave de correlação.
+- **Conectores diretos de origem.** Atualmente os dados entram via arquivos CSV em `source_data/`. Uma evolução esperada é conexão direta com as APIs dos sistemas (Moodle Web Services, Microsoft Graph API para SharePoint e banco do sistema acadêmico).
